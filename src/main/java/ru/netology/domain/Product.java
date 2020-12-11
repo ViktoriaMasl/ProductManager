@@ -1,21 +1,18 @@
 package ru.netology.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
-@EqualsAndHashCode
 public class Product {
     private int id;
     private String name;
     private double price;
 
-    public Product() {
-    }
-
-    public Product(int id, String name, double price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
+    public boolean matches(String search) {
+        return getName().equalsIgnoreCase(search);
     }
 }
